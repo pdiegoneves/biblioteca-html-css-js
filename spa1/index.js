@@ -6,6 +6,7 @@ const main = document.getElementById('root')
 
 const init = () => {
     window.addEventListener('hashchange', () => {
+        main.innerHTML = ""
         switch (window.location.hash) {
             case " ":
                 main.appendChild(home())
@@ -15,6 +16,9 @@ const init = () => {
                 break
             case "#contacts":
                 main.appendChild(contacts())
+                break
+            default:
+                main.appendChild(home())
                 break
         }
     })
